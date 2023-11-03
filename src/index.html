@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas - Jack Reacher</title>
+</head>
+
+<body>
+
+<h2>Resultados de la búsqueda: "Jack Reacher"</h2>
+<div id="movies"></div>
+
+<script>
+    const API_URL = "https://api.themoviedb.org/3/search/movie";
+    const API_KEY = "2701beb63f13bbddff4cacd46cdb0a20"; // Recuerda no exponer tu clave API en produccion
+    const QUERY = "Jack+Reacher";
+
+    fetch(`${API_URL}?query=${QUERY}&api_key=${API_KEY}`)
+        .then(response => response.json())
+        .then(data => {
+            const moviesDiv = document.getElementById('movies');
+
+            if (data.results && data.results.length > 0) {
+                data.results.forEach(movie => {
+                    let movieDiv = document.createElement('div');
+                    movieDiv.innerHTML = `
+                        <h3>${movie.title}</h3>
+                        <p>${movie.overview}</p>
+                    `;
+                    moviesDiv.appendChild(movieDiv);
+                });
+            } else {
+                moviesDiv.innerHTML = '<p>No se encontraron películas con esa búsqueda.</p>';
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+</script>
+
+</body>
+
+</html>
+
