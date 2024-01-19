@@ -1,0 +1,74 @@
+.Pprincipal_div {
+  overflow-y: auto;
+  max-height: 625px;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: -140px;
+  margin-bottom: -100px;
+}
+
+h2 {
+  color: #48C9B0;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  position: relative;
+  display: inline-block;
+  width: 18%;
+  margin: 1%;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+li:hover {
+  transform: scale(1.05);
+}
+
+li img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+.overlay_principal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transition: opacity 0.3s ease-in-out;
+}
+
+li:hover .overlay_principal {
+  opacity: 1;
+}
+
+.overlay p {
+  margin: 10px;
+  text-align: center;
+}
+
+/* Agrega un salto de línea después de cada quinta película */
+li:nth-child(5n) {
+  clear: both;
+}
