@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Pprincipal.css";
+import { Link } from "react-router-dom";
+import Pfinal from "./Pfinal";
 
 function Pprincipal() {
   const [movies, setMovies] = useState([]);
@@ -44,24 +46,30 @@ function Pprincipal() {
           onMouseEnter={() => handleMediaHover(media)}
           onMouseLeave={() => handleMediaHover(null)}
         >
-          <img
-            src={`https://image.tmdb.org/t/p/w500${media.poster_path}`}
-            alt={media.title || media.name}
-            style={{ height: "375px" }}
-          />
-          <div className="overlay_principal">
-            <p>{media.title || media.name}</p>
-            {selectedMedia && selectedMedia.id === media.id && (
-              <div>
-                <p>Descripción: {media.overview}</p>
-                <p>Puntuación: {media.vote_average}</p>
-              </div>
-            )}
-          </div>
+          <Link to="/Pfinal" state={{ selectedMedia: { ...media, trailerLink: getTrailerLink(media.id) } }}>
+            <img
+              src={`https://image.tmdb.org/t/p/w500${media.poster_path}`}
+              alt={media.title || media.name}
+              style={{ height: "375px" }}
+            />
+            <div className="overlay_principal">
+              <p>{media.title || media.name}</p>
+              {selectedMedia && selectedMedia.id === media.id && (
+                <div>
+                  <p>Descripción: {media.overview}</p>
+                  <p>Puntuación: {media.vote_average}</p>
+                </div>
+              )}
+            </div>
+          </Link>
         </li>
       ))}
     </ul>
   );
+
+  const getTrailerLink = (id) => {
+    return `https://www.youtube.com/embed/${id}`;
+  };
 
   return (
     <div className="Pprincipal_div">

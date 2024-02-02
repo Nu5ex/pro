@@ -5,7 +5,7 @@ import SignUpForm from "./SignUp";
 import Users from "./users";
 import Pprincipal from "./Pprincipal";
 import Upago from "./Upago";
-
+import Pfinal from "./Pfinal";
 
 const CLogin = () => {
   const [type, setType] = React.useState("signIn");
@@ -41,6 +41,14 @@ const CLogin = () => {
             <Routes>
               <Route path="/Upago" element={<Upago />} />
               <Route path="/*" element={<Navigate to="/Upago" replace />} />
+            </Routes>
+          );
+        }
+        if (location.pathname === "/Pfinal") {
+          return (
+            <Routes>
+              <Route path="/Pfinal"element={<Pfinal />} />
+              <Route path="/*" element={<Navigate to="/Pfinal" replace />} />
             </Routes>
           );
         }

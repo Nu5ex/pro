@@ -1,0 +1,59 @@
+/* Añade estos estilos al final de tu archivo CSS */
+
+.video-container {
+  flex: 1;
+  margin-left: 0; /* Elimina el margen derecho para acercar el video al juego */
+  margin-bottom: 55px; /* Agrega un margen inferior para separar el video del juego */
+}
+
+.game-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 55px; /* Añade un margen superior para separar el juego del video */
+}
+
+/* Estilos para mejorar la apariencia del juego */
+
+.board-row {
+  display: flex;
+}
+
+.square {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  font-size: 24px;
+  font-weight: bold;
+  margin: -1px 0 0 -1px;
+  padding: 20px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  color: black;
+  transition: background-color 0.3s ease; /* Agrega una transición para mejorar la interactividad */
+}
+
+.square:hover {
+  background-color: #f2f2f2; /* Cambia el color de fondo al pasar el mouse sobre un cuadrado */
+}
+
+.status {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #48C9B0; /* Cambia el color del texto a #48C9B0 */
+}
+
+.reset-button {
+  background-color: #48C9B0;
+  margin-top: 10px; /* Añade un margen superior al botón de reinicio */
+}
+
+.pfinal-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: -300vh;
+
+}

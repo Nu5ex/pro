@@ -21,6 +21,7 @@ export default function ImageComponent() {
         <Link key={index} to="/Pprincipal" className="photo-link">
           <div className="photo-container">
             <img src={character.image} alt={character.name} className="photo-img" />
+
           </div>
           <p className="photo-name">{character.name}</p>
         </Link>

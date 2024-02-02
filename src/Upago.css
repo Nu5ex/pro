@@ -1,0 +1,63 @@
+.upago_container {
+  max-width: 600px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: -140px;
+}
+
+.upago_container h1 {
+  text-align: center;
+}
+
+.upago_section {
+  margin-bottom: 20px;
+}
+
+.upago_section h2 {
+  margin-bottom: 10px;
+}
+
+.upago_section label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.upago_payment input[type="radio"] {
+  margin-right: 5px;
+}
+
+.upago_user input[type="text"],
+.upago_profile input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.upago_submit button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.upago_submit button:hover {
+  background-color: #45a049;
+}
+
+.upago_link a {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.upago_link a:hover {
+  text-decoration: underline;
+}
