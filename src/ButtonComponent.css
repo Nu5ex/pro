@@ -1,0 +1,27 @@
+/* ButtonComponent.css */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .register-button,
+  .login-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register-button:hover,
+  .login-button:hover {
+    background-color: #0056b3;
+  }
+  

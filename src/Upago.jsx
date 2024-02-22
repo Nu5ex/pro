@@ -1,13 +1,23 @@
-// Upago.js
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, Navigate } from "react-router-dom";
 import "./Upago.css"; // Importa el archivo CSS
-import users from "./users"
 
 function Upago() {
   const [selectedOption, setSelectedOption] = useState(null);
   const [username, setUsername] = useState("");
   const [profilePicture, setProfilePicture] = useState(null);
+  const [redirectToPersistente, setRedirectToPersistente] = useState(false);
+
+  useEffect(() => {
+    // Cargar los datos del formulario desde el almacenamiento local cuando el componente se monte
+    const savedData = localStorage.getItem("upagoFormData");
+    if (savedData) {
+      const formData = JSON.parse(savedData);
+      setSelectedOption(formData.selectedOption);
+      setUsername(formData.username);
+      setProfilePicture(formData.profilePicture);
+    }
+  }, []);
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
@@ -19,19 +29,27 @@ function Upago() {
 
   const handleProfilePictureChange = (event) => {
     const file = event.target.files[0];
-    setProfilePicture(file);
+    // Guardar la URL de la imagen
+    const imageURL = URL.createObjectURL(file);
+    setProfilePicture(imageURL);
   };
 
   const handleSubmit = () => {
-    // Aquí puedes realizar las acciones correspondientes al formulario,
-    // como enviar datos al servidor, mostrar mensajes, etc.
+    // Guardar los datos del formulario en el almacenamiento local
+    const formData = {
+      selectedOption,
+      username,
+      profilePicture // Guardar la URL de la imagen en lugar del archivo
+    };
+    localStorage.setItem("upagoFormData", JSON.stringify(formData));
 
-    console.log("Opción seleccionada:", selectedOption);
-    console.log("Nombre de usuario:", username);
-    console.log("Foto de perfil:", profilePicture);
-
-    // Puedes enviar esta información al servidor o realizar otras operaciones aquí.
+    // Redireccionar a Upersistente.jsx
+    setRedirectToPersistente(true);
   };
+
+  if (redirectToPersistente) {
+    return <Navigate to="/Upersistente" />;
+  }
 
   return (
     <div className="upago_container">
@@ -85,7 +103,7 @@ function Upago() {
         </label>
       </section>
 
-      <section className="upago_submit" href="users">
+      <section className="upago_submit">
         <button onClick={handleSubmit}>Enviar</button>
       </section>
 

@@ -1,9 +1,8 @@
 .Pprincipal_div {
-  overflow-y: auto;
+  
   max-height: 625px;
   padding: 20px;
   border-radius: 8px;
-  margin-top: -140px;
   margin-bottom: -100px;
 }
 
@@ -71,4 +70,26 @@ li:hover .overlay_principal {
 /* Agrega un salto de línea después de cada quinta película */
 li:nth-child(5n) {
   clear: both;
+}
+
+::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra de desplazamiento */
+  background-color: rgba(0, 0, 0, 0.1); /* Color de fondo de la barra */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #48C9B0; /* Color del thumb de la barra */
+  border-radius: 5px; /* Borde redondeado */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #48C9B0; /* Color del thumb cuando se pasa el cursor */
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.1); /* Color de fondo de la pista */
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent; /* Color de la esquina */
 }

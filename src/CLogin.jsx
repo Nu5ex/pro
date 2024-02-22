@@ -6,6 +6,7 @@ import Users from "./users";
 import Pprincipal from "./Pprincipal";
 import Upago from "./Upago";
 import Pfinal from "./Pfinal";
+import Upersistente from "./Upersistente";
 
 const CLogin = () => {
   const [type, setType] = React.useState("signIn");
@@ -18,7 +19,7 @@ const CLogin = () => {
   const containerClass = "container " + (type === "signUp" ? "right-panel-active" : "left-panel-active");
 
   return (
-    <div>
+    <div className="testAlex">
       {(() => {
         if (location.pathname === "/users") {
           return (
@@ -52,6 +53,14 @@ const CLogin = () => {
             </Routes>
           );
         }
+        if (location.pathname === "/Upersistente") {
+          return (
+            <Routes>
+              <Route path="/Upersistente"element={<Upersistente />} />
+              <Route path="/*" element={<Navigate to="/Upersistente" replace />} />
+            </Routes>
+          );
+        }
         return (
           <div className={containerClass} id="container">
             <Routes>
@@ -60,6 +69,7 @@ const CLogin = () => {
               <Route path="/users" element={<Users />} /> 
               <Route path="/Pprincipal" element={<Pprincipal />} />
               <Route path="/Upago" element={<Upago />} />
+              <Route path="/Upersistente" element={<Upersistente />} />
               <Route path="/" element={<Navigate to="/signIn" replace />} />
             </Routes>
 

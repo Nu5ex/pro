@@ -14,8 +14,8 @@
   }
   
   body {
-    overflow: hidden;
-    display: flex;
+    /* overflow: hidden; */
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -107,12 +107,12 @@
     width: 768px;
     max-width: 100%;
     min-height: 480px;
-    margin-top: -100px;
+    /* margin-top: -100px; */
   }
 
-  .img1{
+  /* .img1{
     margin-top: -150px;
-  }
+  } */
   
   .form-container {
     position: absolute;
@@ -268,4 +268,19 @@
     color: #3c97bf;
     text-decoration: none;
   }
+
+  .testAlex{
+    display: flex;
+    justify-content: center;
+    
+  }
   
+  .fotooo{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .fotooo > img{
+    
+  }

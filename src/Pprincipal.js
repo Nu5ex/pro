@@ -8,21 +8,38 @@ function Pprincipal() {
   const [movies, setMovies] = useState([]);
   const [series, setSeries] = useState([]);
   const [selectedMedia, setSelectedMedia] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const movieUrl = "https://api.themoviedb.org/3/movie/popular";
-        const seriesUrl = "https://api.themoviedb.org/3/tv/popular";
-        const apiKey = "2701beb63f13bbddff4cacd46cdb0a20";
+        let movieResponse, seriesResponse;
 
-        const movieResponse = await axios.get(movieUrl, {
-          params: { api_key: apiKey },
-        });
+        if (searchTerm) {
+          const movieUrl = "https://api.themoviedb.org/3/search/movie";
+          const seriesUrl = "https://api.themoviedb.org/3/search/tv";
+          const apiKey = "2701beb63f13bbddff4cacd46cdb0a20";
 
-        const seriesResponse = await axios.get(seriesUrl, {
-          params: { api_key: apiKey },
-        });
+          movieResponse = await axios.get(movieUrl, {
+            params: { api_key: apiKey, query: searchTerm },
+          });
+
+          seriesResponse = await axios.get(seriesUrl, {
+            params: { api_key: apiKey, query: searchTerm },
+          });
+        } else {
+          const movieUrl = "https://api.themoviedb.org/3/movie/popular";
+          const seriesUrl = "https://api.themoviedb.org/3/tv/popular";
+          const apiKey = "2701beb63f13bbddff4cacd46cdb0a20";
+
+          movieResponse = await axios.get(movieUrl, {
+            params: { api_key: apiKey },
+          });
+
+          seriesResponse = await axios.get(seriesUrl, {
+            params: { api_key: apiKey },
+          });
+        }
 
         setMovies(movieResponse.data.results);
         setSeries(seriesResponse.data.results);
@@ -32,7 +49,7 @@ function Pprincipal() {
     };
 
     fetchData();
-  }, []);
+  }, [searchTerm]);
 
   const handleMediaHover = (media) => {
     setSelectedMedia(media);
@@ -71,13 +88,30 @@ function Pprincipal() {
     return `https://www.youtube.com/embed/${id}`;
   };
 
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
   return (
     <div className="Pprincipal_div">
-      <h2>Películas populares</h2>
-      {renderMediaList(movies)}
+      <input
+        type="text"
+        placeholder="Buscar películas y series..."
+        value={searchTerm}
+        onChange={handleSearchChange}
+      />
 
-      <h2>Series populares</h2>
-      {renderMediaList(series)}
+      {searchTerm && (movies.length === 0 && series.length === 0) ? (
+        <p>No se encontraron resultados</p>
+      ) : (
+        <>
+          <h2>Películas populares</h2>
+          {renderMediaList(movies)}
+
+          <h2>Series populares</h2>
+          {renderMediaList(series)}
+        </>
+      )}
     </div>
   );
 }

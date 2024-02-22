@@ -1,59 +1,106 @@
-/* Añade estos estilos al final de tu archivo CSS */
+.pfinal-container {
+
+  width: 100%;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente los elementos */
+  align-items: flex-start; /* Alinea los elementos a la izquierda */
+}
+
+.video-and-game {
+  display: flex;
+}
 
 .video-container {
-  flex: 1;
-  margin-left: 0; /* Elimina el margen derecho para acercar el video al juego */
-  margin-bottom: 55px; /* Agrega un margen inferior para separar el video del juego */
+  width: 70%; /* Reducido el ancho del video */
+  /* margin-top: -9%; */
+  margin-right: 20px; /* Ajusta el margen derecho para dejar más espacio */
 }
 
 .game-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 55px; /* Añade un margen superior para separar el juego del video */
+  margin-left: 20px; /* Ajusta el margen izquierdo para dejar más espacio */
 }
 
-/* Estilos para mejorar la apariencia del juego */
+.game-selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 20px; /* Ajustado el margen top */
+  margin-right: 130px;
+}
 
 .board-row {
   display: flex;
 }
 
 .square {
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background: #fff;
+  color: black;
+  border: 1px solid #999;
   font-size: 24px;
   font-weight: bold;
-  margin: -1px 0 0 -1px;
-  padding: 20px;
-  width: 60px;
-  height: 60px;
+  line-height: 34px;
+  height: 50px;
+  width: 50px;
+  margin-right: -1px;
+  /* margin-top: -1px; */
+  padding: 0;
   text-align: center;
-  color: black;
-  transition: background-color 0.3s ease; /* Agrega una transición para mejorar la interactividad */
-}
-
-.square:hover {
-  background-color: #f2f2f2; /* Cambia el color de fondo al pasar el mouse sobre un cuadrado */
-}
-
-.status {
-  margin-bottom: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #48C9B0; /* Cambia el color del texto a #48C9B0 */
 }
 
 .reset-button {
+  margin-top: 20px;
+  margin-left: 10px; /* Ajustado el margen izquierdo */
+  padding: 10px 20px;
+  font-size: 16px;
   background-color: #48C9B0;
-  margin-top: 10px; /* Añade un margen superior al botón de reinicio */
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
-.pfinal-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: -300vh;
+.hangman-container {
+  max-height: 250px; /* Tamaño fijo para el contenedor del ahorcado */
+}
 
+.hangman {
+  max-width: 300px;
+  text-align: center;
+  margin-right: auto;
+}
+
+.alphabet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.letter-button {
+  font-size: 16px;
+  margin: 5px;
+  padding: 5px 15px;
+  background-color: #48C9B0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 30px; /* Ancho aumentado para cada letra */
+}
+
+.letter {
+  font-size: 20px;
+  margin: 0 5px;
+  color: white;
+}
+
+.status {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.ter{
+  margin-top: 50%;
+}
+
+.p_pfinal{
+  color: white;
 }

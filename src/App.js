@@ -16,7 +16,9 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <img src={LOGOPROYECTO2} className='img1' alt="Logo"/>
+        <div className="fotooo">
+          <img src={LOGOPROYECTO2} className='img1' alt="Logo"/>
+        </div>
         {/* Usa el componente CLogin aquí */}
         <CLogin />
       </div>

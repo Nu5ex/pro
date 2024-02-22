@@ -1,0 +1,25 @@
+.persi_photo-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 10px auto; /* Alinea el contenedor en el centro horizontal */
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: black;
+    margin-top: 50%;
+  }
+  
+  .persi_photo-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .persi_photo-container img {
+    position: absolute;
+    top: 50%; /* Centra la imagen verticalmente */
+    left: 50%; /* Centra la imagen horizontalmente */
+    transform: translate(-50%, -50%); /* Corrige la posición para centrar completamente */
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+  }
+  

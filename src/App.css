@@ -4,6 +4,8 @@ html{
 }
 .App {
   text-align: center;
+  background-color: blue;
+  width: 100%;
 }
 
 .App-logo {
@@ -70,8 +72,9 @@ html{
 .signin:active {
   background-color: #152B3C;
 }
-.img1{
-  margin-top: 2%;
+/* .img1{
+  margin-top: 20%;
   margin-left: 512px;
   width: 30%;
-}
+} */
+
