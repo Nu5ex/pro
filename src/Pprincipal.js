@@ -105,10 +105,10 @@ function Pprincipal() {
         <p>No se encontraron resultados</p>
       ) : (
         <>
-          <h2>Películas populares</h2>
+          <h2>Popular films</h2>
           {renderMediaList(movies)}
 
-          <h2>Series populares</h2>
+          <h2>Popular series</h2>
           {renderMediaList(series)}
         </>
       )}

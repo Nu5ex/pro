@@ -145,14 +145,14 @@ const Pfinal = () => {
     <div className="pfinal-container">
       <div className="video-and-game">
         <div className="video-container">
-          <iframe
-            title="Nuevo Video - Werlyb"
-            width="70%"
-            height="465"
-            src="https://www.youtube.com/embed/zUngFuw2U9g"
-            frameBorder="0"
-            allowFullScreen
-          ></iframe>
+        <iframe
+          title="Wonka | Tráiler Oficial 2"
+          width="70%"
+          height="465"
+          src="https://www.youtube.com/embed/hQdTXGfDWgY?rel=0"
+          frameBorder="0"
+          allowFullScreen
+        ></iframe>
         </div>
         <div className="game-container">
           {gameMode === 'ticTacToe' && (
@@ -193,8 +193,8 @@ const Pfinal = () => {
         </div>
       </div>
       <div className="game-selector">
-        <button onClick={() => setGameMode('ticTacToe')}>Tres en raya</button>
-        <button onClick={() => setGameMode('hangman')}>Ahorcado</button>
+        <button onClick={() => setGameMode('ticTacToe')}>Tic Tac Toe</button>
+        <button onClick={() => setGameMode('hangman')}>Hangman</button>
       </div>
     </div>
   );

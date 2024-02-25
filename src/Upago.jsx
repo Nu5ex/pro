@@ -53,10 +53,10 @@ function Upago() {
 
   return (
     <div className="upago_container">
-      <h1>Selección de Pago</h1>
+      <h1>Payment Selection</h1>
 
       <section className="upago_payment">
-        <h2>Elige tu opción de pago:</h2>
+        <h2>Choose your payment option:</h2>
         <label>
           <input
             type="radio"
@@ -65,7 +65,7 @@ function Upago() {
             checked={selectedOption === "free"}
             onChange={() => handleOptionChange("free")}
           />
-          Gratis
+          Free
         </label>
 
         <label>
@@ -81,9 +81,9 @@ function Upago() {
       </section>
 
       <section className="upago_user">
-        <h2>Crea tu usuario:</h2>
+        <h2>Create your user:</h2>
         <label>
-          Nombre de usuario:
+        Username:
           <input
             type="text"
             value={username}
@@ -93,7 +93,7 @@ function Upago() {
       </section>
 
       <section className="upago_profile">
-        <h2>Elige tu foto de perfil:</h2>
+        <h2>Choose your profile photo:</h2>
         <label>
           <input
             type="file"
@@ -104,11 +104,11 @@ function Upago() {
       </section>
 
       <section className="upago_submit">
-        <button onClick={handleSubmit}>Enviar</button>
+        <button onClick={handleSubmit}>Send</button>
       </section>
 
       <section className="upago_link">
-        <Link to="/">Volver a la página principal</Link>
+        <Link to="/">Return to main page</Link>
       </section>
     </div>
   );
